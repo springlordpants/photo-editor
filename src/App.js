@@ -1,7 +1,7 @@
 import React from 'react';
+import './App.css';
 import Slider from './components/Slider';
 import SidebarItem from './components/SidebarItem';
-import './App.css';
 
 function App() {
   return (
