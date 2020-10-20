@@ -9,7 +9,7 @@ export default function Slider({min, max, value, handleChange}) {
             min={min}
             max={max}
             value={value}
-            handleChange={handleChange}
+            onChange={handleChange}
             />
         </div>
     )
