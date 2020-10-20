@@ -5,7 +5,7 @@ import SidebarItem from './components/SidebarItem';
 
 const defaultOptions = [
   {
-    name: 'Brightness',
+    name: 'Exposure',
     property: 'brightness',
     value: 100,
     range: {
