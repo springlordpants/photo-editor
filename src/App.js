@@ -5,9 +5,9 @@ import './App.css';
 function App() {
   return (
     <div className="container">
-      <div class="main-image" />
-      <div className="side-bar">
-
+      <div class="main-image">image</div>
+      <div className="sidebar">
+        sidebar
       </div>
       <Slider />
     </div>
