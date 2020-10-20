@@ -30,5 +30,11 @@ body{
 
 .slider-container {
   grid-area: slider;
-  background-color: green;
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+.slider {
+  width: 100%;
+  cursor: pointer;
 }
