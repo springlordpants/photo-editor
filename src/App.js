@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import ReactDOM from 'react-dom'
 import './App.css';
 import Slider from './components/Slider';
 import SidebarItem from './components/SidebarItem';
@@ -83,6 +84,21 @@ function App() {
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(0)
   const [options, setOptions] = useState(defaultOptions)
   const selectedOption = options[selectedOptionIndex]
+  
+  const imageUploader = React.useRef(null);
+  const uploadedImage = React.useRef(null);
+  const handleImageUpload = e => {
+    const [file] = e.target.files;
+    if (file) {
+      const reader = new FileReader();
+      const {current} = uploadedImage;
+      current.file = file;
+      reader.onload = (e) => {
+          current.src = e.target.result;
+      }
+      reader.readAsDataURL(file);
+    }
+  };
 
   function handleSliderChange({ target }) {
     setOptions(prevOptions => {
@@ -103,7 +119,44 @@ function App() {
 
   return (
     <div className="container">
-      <div className="main-image" style={getImageStyle()}></div>
+      <div className="main-image">
+        {/* <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center"
+        }}
+      > */}
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleImageUpload}
+          ref={imageUploader}
+          style={{
+            display: "none"
+          }}
+        />
+        <div
+          style={{
+            height: "60px",
+            width: "60px",
+            border: "1px dashed black"
+          }}
+          onClick={() => imageUploader.current.click()}
+        >
+          <img
+            ref={uploadedImage}
+            style={getImageStyle()}
+          />
+        </div>
+        Click to upload Image
+      </div>
+        {/* <input type="file" accept="image/*" onChange={handleImageUpload} />
+        <div>
+          <img ref={uploadedImage} style={getImageStyle()} />
+        </div>
+      </div> */}
       <div className="sidebar">
         {options.map((option, index) => {
           return(
@@ -123,7 +176,7 @@ function App() {
         handleChange={handleSliderChange}
       />
       <UploadBar />
-    </div>
+      </div>
   );
 }
 
