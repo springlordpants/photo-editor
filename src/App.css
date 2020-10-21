@@ -46,20 +46,10 @@ body{
 }
 
 .upload-button:hover, .upload-button:focus {
+  color: #52c4f1;
   box-shadow: 
     inset -1px -1px 10px rgba(255,255,255,0.05),
     inset 1px 1px 6px rgba(0,0,0,0.8);
-
-}
-
-.upload-button.active {
-  color: #52c4f1;
-  box-shadow: 
-    inset -1px -1px 3px rgba(255,255,255,0.1),
-    inset 2px 2px 6px rgba(0,0,0,0.8);
-  text-shadow: 
-    0 0 5px #52c4f1, 
-    0 0 20px #52c4f1;
 }
 
 .main-image{
