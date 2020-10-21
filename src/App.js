@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
-import ReactDOM from 'react-dom'
 import './App.css';
 import Slider from './components/Slider';
 import SidebarItem from './components/SidebarItem';
-import UploadBar from './components/UploadBar'
+import PublishIcon from '@material-ui/icons/Publish';
 
 
 const defaultOptions = [
@@ -137,20 +136,18 @@ function App() {
             display: "none"
           }}
         />
-        <div
-          style={{
-            height: "60px",
-            width: "60px",
-            border: "1px dashed black"
-          }}
-          onClick={() => imageUploader.current.click()}
-        >
+        <div>
+          <div className="upload">
+            <p>Upload your image here:</p>
+            <button className="upload-button" onClick={() => imageUploader.current.click()}>
+                  <PublishIcon />
+            </button>
+          </div>
           <img
             ref={uploadedImage}
             style={getImageStyle()}
           />
         </div>
-        Click to upload Image
       </div>
         {/* <input type="file" accept="image/*" onChange={handleImageUpload} />
         <div>
@@ -175,7 +172,6 @@ function App() {
         value={selectedOption.value}
         handleChange={handleSliderChange}
       />
-      <UploadBar />
       </div>
   );
 }
