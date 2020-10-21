@@ -3,6 +3,7 @@ import './App.css';
 import Slider from './components/Slider';
 import SidebarItem from './components/SidebarItem';
 import PublishIcon from '@material-ui/icons/Publish';
+import ImageIcon from '@material-ui/icons/Image';
 
 
 const defaultOptions = [
@@ -153,12 +154,21 @@ function App() {
           )
         })}
       </div>
-      <div className="upload">
+      <div>
+        <div className="upload">
+          <div className="temp-image">
+            <ImageIcon style={{ fontSize: 100 }} />
+          </div>
           <p>Upload your image here:</p>
           <button className="upload-button" onClick={() => imageUploader.current.click()}>
                 <PublishIcon />
           </button>
         </div>
+      </div>
+      {/* <div className="restart">
+        <p>Screenshot when finished</p>
+        <p>Restart for new image</p>
+      </div> */}
       <Slider 
         min={selectedOption.range.min}
         max={selectedOption.range.max}

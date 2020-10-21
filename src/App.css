@@ -14,6 +14,7 @@ body{
   grid-template-areas:
     "image sidebar"
     "upload sidebar"
+    "restart sidebar"
     "slider sidebar";
   height: 100vh;
   width: 100vw;
@@ -65,6 +66,15 @@ body{
   background-repeat: no-repeat;
 }
 
+.temp-image {
+  position: absolute;
+  bottom: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .sidebar{
   grid-area: sidebar;
   padding: 0 15px;
@@ -115,4 +125,16 @@ body{
 .slider {
   width: 100%;
   cursor: pointer;
+}
+
+.restart{
+  grid-area: restart;
+  text-align: center;
+  padding: 20px 40px ;
+  background-color:  #282828;
+  color: #52c4f1;
+  text-shadow: 
+    0 0 5px #52c4f1, 
+    0 0 20px #52c4f1;
+  /* flex-direction: row; */
 }
