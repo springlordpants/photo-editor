@@ -118,15 +118,13 @@ function App() {
 
   return (
     <div className="container">
-      <div className="main-image">
-        {/* <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center"
-        }}
-      > */}
+      <div className="main-image"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        
+      }}>
         <input
           type="file"
           accept="image/*"
@@ -136,24 +134,13 @@ function App() {
             display: "none"
           }}
         />
-        <div>
-          <div className="upload">
-            <p>Upload your image here:</p>
-            <button className="upload-button" onClick={() => imageUploader.current.click()}>
-                  <PublishIcon />
-            </button>
-          </div>
+        <div style={getImageStyle()}>
           <img
             ref={uploadedImage}
-            style={getImageStyle()}
-          />
+            style={{maxWidth:'100%', maxHeight:'76vh'}}
+            alt="" />
         </div>
       </div>
-        {/* <input type="file" accept="image/*" onChange={handleImageUpload} />
-        <div>
-          <img ref={uploadedImage} style={getImageStyle()} />
-        </div>
-      </div> */}
       <div className="sidebar">
         {options.map((option, index) => {
           return(
@@ -166,6 +153,12 @@ function App() {
           )
         })}
       </div>
+      <div className="upload">
+          <p>Upload your image here:</p>
+          <button className="upload-button" onClick={() => imageUploader.current.click()}>
+                <PublishIcon />
+          </button>
+        </div>
       <Slider 
         min={selectedOption.range.min}
         max={selectedOption.range.max}
