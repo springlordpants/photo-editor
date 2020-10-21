@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import './App.css';
 import Slider from './components/Slider';
 import SidebarItem from './components/SidebarItem';
-import PublishIcon from '@material-ui/icons/Publish';
+import UploadBar from './components/UploadBar'
+
 
 const defaultOptions = [
   {
@@ -121,12 +122,7 @@ function App() {
         value={selectedOption.value}
         handleChange={handleSliderChange}
       />
-      <div className="upload-bar">
-        <p>Upload your image here:</p>
-        <button className="upload-button">
-          <PublishIcon />
-        </button>
-      </div>
+      <UploadBar />
     </div>
   );
 }
