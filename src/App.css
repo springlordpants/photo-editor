@@ -66,14 +66,6 @@ body{
   background-repeat: no-repeat;
 }
 
-.temp-image {
-  position: absolute;
-  bottom: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 
 .sidebar{
   grid-area: sidebar;
@@ -125,16 +117,4 @@ body{
 .slider {
   width: 100%;
   cursor: pointer;
-}
-
-.restart{
-  grid-area: restart;
-  text-align: center;
-  padding: 20px 40px ;
-  background-color:  #282828;
-  color: #52c4f1;
-  text-shadow: 
-    0 0 5px #52c4f1, 
-    0 0 20px #52c4f1;
-  /* flex-direction: row; */
 }
