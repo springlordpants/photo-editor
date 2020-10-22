@@ -137,7 +137,7 @@ function App() {
         <div style={getImageStyle()}>
           <img
             ref={uploadedImage}
-            style={{maxWidth:'100%', maxHeight:'76vh'}}
+            style={{maxWidth:'100%', maxHeight:'70vh'}}
             alt=""
           />
         </div>

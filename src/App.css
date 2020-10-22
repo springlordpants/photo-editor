@@ -110,8 +110,8 @@ body{
 
 .slider-container {
   grid-area: slider;
-  margin-top: 2rem;
-  padding: 2rem;
+  margin: 2rem 0;
+  padding: 0 2rem;
 }
 
 .slider {
